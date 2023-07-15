@@ -27,9 +27,9 @@ These are the current available endpoints:
 
 Retrieves a paginated list of projects.
 
-```http
+````http
   GET /api/projects
-```
+````
 
 | Parameter | Type     | Description                | 
 | :-------- | :------- | :------------------------- |
@@ -40,9 +40,9 @@ Retrieves a paginated list of projects.
 
 Retrieves a single project by its Id.
 
-```http
+````http
   GET /api/projects/${id}
-```
+````
 
 | Parameter | Type     | Description                | 
 | :-------- | :------- | :------------------------- |
@@ -52,9 +52,9 @@ Retrieves a single project by its Id.
 
 Retrieves paginated list of projects by their names matching a string.
 
-```http
+````http
   GET /api/projects/name
-```
+````
 
 | Parameter | Type     | Description                | 
 | :-------- | :------- | :------------------------- |
@@ -66,18 +66,18 @@ Retrieves paginated list of projects by their names matching a string.
 
 Creates a single project and saves it in the database.
 
-```http
+````http
   POST /api/projects
-```
+````
 
 It receives a JSON body with the following parameters
 
-```json
+````json
 {
     "name": "name of the project",
     "description": "the project description"
 }
-```
+````
 If the new project has the same name as another project, the server will send an error message. 
 
 
@@ -85,30 +85,30 @@ If the new project has the same name as another project, the server will send an
 
 Gets and updates a single project in the database.
 
-```http
+````http
   PUT /api/projects/${id}
-```
+````
 | Parameter | Type     | Description                | 
 | :-------- | :------- | :------------------------- |
 | `id` | `long` | The search parameter. Should correspond with an existing project, otherwise the server will return an error message |
 
 It receives a JSON body with the following parameters
 
-```json
+````json
 {
     "name": "new name of the project",
     "description": "the new project description"
 }
-```
+````
 If the updated project's new name is the same as another project's, the server will send an error message. The updated project must also exist in the database. if it doesn't, or if there would be no changes to the existing database project, then the server will respond with an error message.
 
 #### Assign user to project
 
 Retrieves a single project by its Id and assign a user to it.
 
-```http
+````http
   PATCH /api/projects/${id}/assign-user/${email}
-```
+````
 
 | Parameter | Type     | Description                | 
 | :-------- | :------- | :------------------------- |
@@ -119,9 +119,9 @@ Retrieves a single project by its Id and assign a user to it.
 
 Removes a single project by its Id.
 
-```http
+````http
   DELETE /api/projects/${id}
-```
+````
 
 | Parameter | Type     | Description                | 
 | :-------- | :------- | :------------------------- |
@@ -133,9 +133,9 @@ Removes a single project by its Id.
 
 Retrieves a paginated list of users.
 
-```http
+````http
   GET /api/users
-```
+````
 
 | Parameter | Type     | Description                | 
 | :-------- | :------- | :------------------------- |
@@ -146,9 +146,9 @@ Retrieves a paginated list of users.
 
 Retrieves a single user by its Id.
 
-```http
+````http
   GET /api/users/${id}
-```
+````
 
 | Parameter | Type     | Description                | 
 | :-------- | :------- | :------------------------- |
@@ -158,9 +158,9 @@ Retrieves a single user by its Id.
 
 Retrieves paginated list of users by their names matching a string.
 
-```http
+````http
   GET /api/users/name
-```
+````
 
 | Parameter | Type     | Description                | 
 | :-------- | :------- | :------------------------- |
@@ -172,9 +172,9 @@ Retrieves paginated list of users by their names matching a string.
 
 Retrieves a single user by its email.
 
-```http
+````http
   GET /api/users/email
-```
+````
 
 | Parameter | Type     | Description                | 
 | :-------- | :------- | :------------------------- |
@@ -184,18 +184,18 @@ Retrieves a single user by its email.
 
 Creates a single user and saves it in the database.
 
-```http
+````http
   POST /api/users
-```
+````
 
 It receives a JSON body with the following parameters
 
-```json
+````json
 {
     "name": "name of the user",
     "description": "the user description"
 }
-```
+````
 If the new user has the same name as another user, the server will send an error message. 
 
 
@@ -203,30 +203,30 @@ If the new user has the same name as another user, the server will send an error
 
 Gets and updates a single user in the database.
 
-```http
+````http
   PUT /api/users/${id}
-```
+````
 | Parameter | Type     | Description                | 
 | :-------- | :------- | :------------------------- |
 | `id` | `long` | The search parameter. Should correspond with an existing user, otherwise the server will return an error message |
 
 It receives a JSON body with the following parameters
 
-```json
+````json
 {
     "name": "new name of the user",
     "email": "the new user email"
 }
-```
+````
 If the updated user's new name is the same as another user's, the server will send an error message. The updated user must also exist in the database. if it doesn't, or if there would be no changes to the existing database user, then the server will respond with an error message.
 
 #### Remove one user by Id
 
 Removes a single user by its Id.
 
-```http
+````http
   DELETE /api/users/${id}
-```
+````
 
 | Parameter | Type     | Description                | 
 | :-------- | :------- | :------------------------- |
